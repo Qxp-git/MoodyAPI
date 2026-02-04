@@ -1,0 +1,38 @@
+--- Environment ------------------------------------------------------------------------------------------------------------------
+1025. 	 ! rho kg/m3 
+9.81 	 ! gravity m/s2 
+100. 	 ! water depth m 
+0. 0. 	 ! wave elevation point (zero phase) 
+--- Description of floating bodies -----------------------------------------------------------------------------------------------
+1	 ! number of bodies
+--- Body 1 -----------------------------------------------------------------------------------------------------------------------
+ellipsoid_wetted.dat	 ! mesh file name 
+752 1440	 ! number of points and panels in the mesh
+6 	 ! number of body motions to compute
+1 1. 0. 0. 0. 0. -2. 	 ! body motion in dof 1 
+1 0. 1. 0. 0. 0. -2. 	 ! body motion in dof 2 
+1 0. 0. 1. 0. 0. -2. 	 ! body motion in dof 3 
+2 1. 0. 0. 0. 0. -2. 	 ! body motion in dof 4 
+2 0. 1. 0. 0. 0. -2. 	 ! body motion in dof 5 
+2 0. 0. 1. 0. 0. -2. 	 ! body motion in dof 6 
+6 	 ! number of forces to compute
+1 1. 0. 0. 0. 0. -2. 	 ! force in dof 1 
+1 0. 1. 0. 0. 0. -2. 	 ! force in dof 2 
+1 0. 0. 1. 0. 0. -2. 	 ! force in dof 3 
+2 1. 0. 0. 0. 0. -2. 	 ! force in dof 4 
+2 0. 1. 0. 0. 0. -2. 	 ! force in dof 5 
+2 0. 0. 1. 0. 0. -2. 	 ! force in dof 6 
+0		 ! number of additional lines
+--- Load cases to be solved ------------------------------------------------------------------------------------------------------
+1 30 0.01 20. 	 ! mode (radians/s), number of frequencies, [min max] in rad/s.
+1 0. 0. 	 ! Number of wave directions, [min,max] in degrees.
+--- Post processing --------------------------------------------------------------------------------------------------------------
+0 0. 20. 	 ! Impulse Response Function (IRF): switch, time step size , and duration  (s)
+0 		 ! Dont show pressure
+0 0. 180. 	 ! Kochin function output
+0 50 200 200	 ! Free surface elevation 
+0 		 ! Response Amplitude Operator (RAO), 0 no calculation, 1 calculated 
+1 		 !output freq type, 1,2,3=[rad/s,Hz,s] 
+---QTF---
+0		 ! QTF flag, 1 is calculated
+----------
